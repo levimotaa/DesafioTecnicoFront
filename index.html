@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supremo - Imóveis na Praia Brava e Fazenda em Itajaí</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon-custom"></span>
+        </button>
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img
+            src="/assets/img/logo-supremo-branco.png"
+            alt="Supremo Imóveis"
+            height="40"
+            class="d-block mx-auto position-absolute start-50 translate-middle"
+          />
+        </a>
+
+        <!-- Links e Telefone -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <!-- Menu Drop -->
+            <li class="nav-item dropdown d-none d-lg-block">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-list" style="font-size: 1.5rem"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#imoveis">Imóveis</a></li>
+                <li>
+                  <a class="dropdown-item" href="#destaques">Destaques</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#exclusivos">Exclusivos</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#sobre">Sobre</a></li>
+              </ul>
+            </li>
+
+            <!-- Menu Mobile - Links Diretos -->
+            <li class="nav-item d-lg-none">
+              <a class="nav-link" href="#imoveis">Imóveis</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link" href="#destaques">Destaques</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link" href="#exclusivos">Exclusivos</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+          </ul>
+
+          <!-- Telefone e WhatsApp -->
+          <div class="d-flex align-items-center ms-0 ms-xxl-4">
+            <a
+              class="nav-link text-white"
+              href="https://wa.me/5547987654321"
+              target="_blank"
+            >
+              <i class="bi bi-whatsapp"></i>
+              <span class="d-none d-sm-inline">(47) 98765-4321</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <h1 class="hero-title">
+          Imóveis na Praia Brava e<br />Fazenda em Itajaí
+        </h1>
+
+        <!-- Novo Formulário de Busca -->
+        <div class="search-container">
+          <form class="search-form">
+            <div class="search-row">
+              <!-- Tipo -->
+              <div class="search-group">
+                <div class="search-icon">
+                  <i class="bi bi-house-door"></i>
+                </div>
+                <select id="search-tipo" class="form-select" aria-label="Tipo">
+                  <option selected value="">Tipos</option>
+                  <option value="apartamento">Apartamento</option>
+                  <option value="casa">Casa</option>
+                  <option value="terreno">Terreno</option>
+                </select>
+              </div>
+
+              <!-- Cidade -->
+              <div class="search-group">
+                <div class="search-icon">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <select
+                  id="search-cidade"
+                  class="form-select"
+                  aria-label="Cidade"
+                >
+                  <option selected value="">Cidades</option>
+                  <option value="itajaí">Itajaí</option>
+                  <option value="praia brava">Praia Brava</option>
+                  <option value="balneário camboriú">Balneário Camboriú</option>
+                </select>
+              </div>
+
+              <!-- Bairro -->
+              <div class="search-group">
+                <div class="search-icon">
+                  <i class="bi bi-pin-map"></i>
+                </div>
+                <select
+                  id="search-bairro"
+                  class="form-select"
+                  aria-label="Bairro"
+                >
+                  <option selected value="">Bairros</option>
+                  <option value="centro">Centro</option>
+                  <option value="praia brava">Praia Brava</option>
+                  <option value="barra sul">Barra Sul</option>
+                </select>
+              </div>
+
+              <!-- Valor -->
+              <div class="search-group">
+                <div class="search-icon">
+                  <i class="bi bi-currency-dollar"></i>
+                </div>
+                <select
+                  id="search-valor"
+                  class="form-select"
+                  aria-label="Valor"
+                >
+                  <option selected value="">Valores</option>
+                  <option value="0-500000">Até R$ 500.000</option>
+                  <option value="500000-1000000">
+                    R$ 500.000 - R$ 1.000.000
+                  </option>
+                  <option value="1000000">Acima de R$ 1.000.000</option>
+                </select>
+              </div>
+
+              <!-- Código -->
+              <div class="search-group">
+                <div class="search-icon">
+                  <i class="bi bi-tag"></i>
+                </div>
+                <input
+                  type="text"
+                  id="search-codigo"
+                  class="search-input"
+                  name="codigo"
+                  placeholder="Código"
+                />
+              </div>
+
+              <!-- Botão de Busca -->
+              <button type="submit" class="search-button">
+                <i class="bi bi-search"></i>
+              </button>
+              <button type="button" class="advanced-search-btn ms-2"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="imoveis" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Conheça nossos Imóveis</h2>
+          <p class="text-muted">
+            Os melhores imóveis na Praia Brava em Itajaí você encontra aqui!
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <div class="property-card">
+              <div class="property-image">
+                <img
+                  src="assets/img/itajaiCard.jpg"
+                  alt="Itajaí"
+                  class="img-fluid"
+                />
+                <div class="property-overlay">
+                  <h3>Itajaí</h3>
+                  <p class="mb-0">Santa Catarina</p>
+                </div>
+              </div>
+              <div class="property-body">
+                <ul class="property-list">
+                  <li>Apartamento na Bairro Fazenda</li>
+                  <li>Apartamento com 3 quartos em Itajaí</li>
+                  <li>Lançamento em Itajaí</li>
+                  <li>Apartamento na orla do Atalaia em Itajaí</li>
+                  <li>Apartamento Mobiliado em Itajaí</li>
+                </ul>
+                <a href="#" class="btn-link">Ver todos imóveis</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <div class="property-card">
+              <div class="property-image">
+                <img
+                  src="/assets/img/PraiaBrava.jpg"
+                  alt="Praia Brava"
+                  class="img-fluid"
+                />
+                <div class="property-overlay">
+                  <h3>Praia Brava</h3>
+                  <p class="mb-0">Santa Catarina</p>
+                </div>
+              </div>
+              <div class="property-body">
+                <ul class="property-list">
+                  <li>Apartamento na Praia Brava</li>
+                  <li>Mobiliado na Praia Brava</li>
+                  <li>Frente Mar na Praia Brava</li>
+                  <li>3 quartos na Praia Brava</li>
+                  <li>Lançamento na Praia Brava</li>
+                </ul>
+                <a href="#" class="btn-link">Ver todos imóveis</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <div class="property-card">
+              <div class="property-image">
+                <img
+                  src="/assets/img/SantaCatarina.jpg"
+                  alt="Balneário Camboriú"
+                  class="img-fluid"
+                />
+                <div class="property-overlay">
+                  <h3>Balneário Camboriú</h3>
+                  <p class="mb-0">Santa Catarina</p>
+                </div>
+              </div>
+              <div class="property-body">
+                <ul class="property-list">
+                  <li>Cobertura Balneário Camboriú</li>
+                  <li>Apartamento em Balneário Camboriú</li>
+                  <li>Bairros Camboriú 2 quartos</li>
+                  <li>Frente mar Balneário Camboriú</li>
+                  <li>Apartamento Balneário Camboriú</li>
+                </ul>
+                <a href="#" class="btn-link">Ver todos imóveis</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destaques -->
+    <section id="destaques" class="py-5 bg-light">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="section-title mb-0">Destaques</h2>
+          <div>
+            <a href="#" class="text-decoration-none me-2">Ver mais</a>
+            <button class="btn btn-sm btn-outline-secondary">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-secondary">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="destaques-list" class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <div class="listing-card">
+              <div class="listing-image">
+                <span class="badge-destaque">Destaque</span>
+                <img
+                  src="/assets/img/ApDestaque01.jpg"
+                  alt="Imóvel"
+                  class="img-fluid"
+                />
+                <span class="badge-codigo">Cód. 18</span>
+              </div>
+              <div class="listing-body">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <h4 class="listing-price">R$ 2.180.000</h4>
+                  <span class="badge bg-secondary">Cód. 18</span>
+                </div>
+                <p class="listing-location">
+                  <i class="bi bi-geo-alt"></i> Apartamento<br />Rua das
+                  Palmeiras, 1234 - Edifício Bela Vista, Itajaí
+                </p>
+                <div class="listing-features">
+                  <span><i class="bi bi-rulers"></i> 115m²</span>
+                  <span><i class="bi bi-door-closed"></i> 3 quartos</span>
+                  <span><i class="bi bi-p-circle"></i> 1 suíte</span>
+                  <span><i class="bi bi-car-front"></i> 2 vagas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <div class="listing-card">
+              <div class="listing-image">
+                <span class="badge-destaque">Destaque</span>
+                <img
+                  src="/assets/img/ApDestaque02.jpg"
+                  alt="Imóvel"
+                  class="img-fluid"
+                />
+                <span class="badge-codigo">Cód. 25</span>
+              </div>
+              <div class="listing-body">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <h4 class="listing-price">R$ 1.300.000</h4>
+                  <span class="badge bg-secondary">Cód. 25</span>
+                </div>
+                <p class="listing-location">
+                  <i class="bi bi-geo-alt"></i> Apartamento<br />Av. Atlântica,
+                  5678 - Edifício Blue Tower, Itajaí
+                </p>
+                <div class="listing-features">
+                  <span><i class="bi bi-rulers"></i> 85m²</span>
+                  <span><i class="bi bi-door-closed"></i> 2 quartos</span>
+                  <span><i class="bi bi-p-circle"></i> 1 suíte</span>
+                  <span><i class="bi bi-car-front"></i> 2 vagas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <div class="listing-card">
+              <div class="listing-image">
+                <span class="badge-destaque">Destaque</span>
+                <img
+                  src="/assets/img/ApDestaque03.jpg"
+                  alt="Imóvel"
+                  class="img-fluid"
+                />
+                <span class="badge-codigo">Cód. 42</span>
+              </div>
+              <div class="listing-body">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <h4 class="listing-price">R$ 3.650.000</h4>
+                  <span class="badge bg-secondary">Cód. 42</span>
+                </div>
+                <p class="listing-location">
+                  <i class="bi bi-geo-alt"></i> Cobertura<br />Av. Beira Mar,
+                  9876 - Edifício Ocean View, Itajaí
+                </p>
+                <div class="listing-features">
+                  <span><i class="bi bi-rulers"></i> 264m²</span>
+                  <span><i class="bi bi-door-closed"></i> 4 quartos</span>
+                  <span><i class="bi bi-p-circle"></i> 3 suítes</span>
+                  <span><i class="bi bi-car-front"></i> 3 vagas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 (Novo) -->
+          <div class="col-md-4">
+            <div class="listing-card">
+              <div class="listing-image">
+                <span class="badge-destaque">Destaque</span>
+                <img
+                  src="/assets/img/iX1gGgHVgNOa.jpg"
+                  alt="Imóvel"
+                  class="img-fluid"
+                />
+                <span class="badge-codigo">Cód. 103</span>
+              </div>
+              <div class="listing-body">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <h4 class="listing-price">R$ 480.000</h4>
+                  <span class="badge bg-secondary">Cód. 103</span>
+                </div>
+                <p class="listing-location">
+                  <i class="bi bi-geo-alt"></i> Apartamento<br />Rua das
+                  Gaivotas, 789 - Itajaí
+                </p>
+                <div class="listing-features">
+                  <span><i class="bi bi-rulers"></i> 45m²</span>
+                  <span><i class="bi bi-door-closed"></i> 1 quarto</span>
+                  <span><i class="bi bi-p-circle"></i> 0 suítes</span>
+                  <span><i class="bi bi-car-front"></i> 1 vaga</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exclusivos -->
+    <section
+      id="exclusivos"
+      class="py-5 text-white"
+      style="background-color: #1a2942"
+    >
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="section-title mb-0" style="color: white">Exclusivos</h2>
+          <div>
+            <a href="#" class="text-white text-decoration-none me-2"
+              >Ver mais</a
+            >
+            <button class="btn btn-sm btn-outline-light">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-light">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="exclusivos-list" class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <div class="listing-card listing-card-dark">
+              <div class="listing-image">
+                <span class="badge-exclusivo">Exclusivo</span>
+                <span class="badge-lancamento">Lançamento</span>
+                <img
+                  src="/assets/img/ap01.jpg"
+                  alt="Imóvel"
+                  class="img-fluid"
+                />
+                <span class="badge-codigo">Cód. 75</span>
+              </div>
+              <div class="listing-body">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <h4 class="listing-price" style="color: white">
+                    R$ 2.400.000
+                  </h4>
+                  <span class="badge bg-secondary">Cód. 75</span>
+                </div>
+                <p class="listing-location">
+                  <i class="bi bi-geo-alt"></i> Apartamento<br />Rua das
+                  Acácias, 456 - Edifício Praia Brava, Itajaí
+                </p>
+                <div class="listing-features">
+                  <span><i class="bi bi-rulers"></i> 132m²</span>
+                  <span><i class="bi bi-door-closed"></i> 4 quartos</span>
+                  <span><i class="bi bi-p-circle"></i> 2 suítes</span>
+                  <span><i class="bi bi-car-front"></i> 3 vagas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <div class="listing-card listing-card-dark">
+              <div class="listing-image">
+                <span class="badge-exclusivo">Exclusivo</span>
+                <img
+                  src="/assets/img/neW4AbBcU3q3.jpg"
+                  alt="Imóvel"
+                  class="img-fluid"
+                />
+                <span class="badge-codigo">Cód. 102</span>
+              </div>
+              <div class="listing-body">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <h4 class="listing-price" style="color: white">R$ 800.000</h4>
+                  <span class="badge bg-secondary">Cód. 102</span>
+                </div>
+                <p class="listing-location">
+                  <i class="bi bi-geo-alt"></i> Terreno<br />Rua dos Coqueiros,
+                  Lote 25 - Praia Brava, Itajaí
+                </p>
+                <div class="listing-features">
+                  <span><i class="bi bi-rulers"></i> 1000m²</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <div class="listing-card listing-card-dark">
+              <div class="listing-image">
+                <span class="badge-exclusivo">Exclusivo</span>
+                <span class="badge-lancamento">Lançamento</span>
+                <img
+                  src="/assets/img/ap02.jpg"
+                  alt="Imóvel"
+                  class="img-fluid"
+                />
+                <span class="badge-codigo">Cód. 88</span>
+              </div>
+              <div class="listing-body">
+                <div
+                  class="d-flex justify-content-between align-items-start mb-2"
+                >
+                  <h4 class="listing-price" style="color: white">
+                    R$ 3.100.000
+                  </h4>
+                  <span class="badge bg-secondary">Cód. 88</span>
+                </div>
+                <p class="listing-location">
+                  <i class="bi bi-geo-alt"></i> Apartamento<br />Av. Beira Mar,
+                  2345 - Edifício Blue Tower, Itajaí
+                </p>
+                <div class="listing-features">
+                  <span><i class="bi bi-rulers"></i> 198m²</span>
+                  <span><i class="bi bi-door-closed"></i> 4 quartos</span>
+                  <span><i class="bi bi-p-circle"></i> 3 suítes</span>
+                  <span><i class="bi bi-car-front"></i> 3 vagas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="text-frame">
+              <h2 class="section-title mb-4">Supremo CRM</h2>
+              <p class="mb-3">
+                Nossa Missão é encontrar o melhor imóvel para os clientes no
+                mercado imobiliário, compreendendo suas necessidades e desejos
+                para oferecer a melhor experiência de compra e venda de imóveis.
+              </p>
+              <p class="mb-3">
+                Localizada na belíssima Praia Brava, em Itajaí/SC, a Supremo
+                Negócios Imobiliários é uma imobiliária moderna, com uma equipe
+                experiente e comprometida em atender as necessidades de seus
+                clientes com excelência.
+              </p>
+              <p class="mb-4">
+                Trabalhamos com foco em resultados, oferecendo um atendimento
+                personalizado e soluções inovadoras para a efetivação de
+                negócios imobiliários em Itajaí e região. Nossa equipe é formada
+                por profissionais qualificados e experientes, prontos para
+                oferecer o melhor atendimento e as melhores oportunidades de
+                negócios aos nossos clientes.
+              </p>
+              <a href="#" class="btn-modern">Ver Mais</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="/assets/img/corretor.png" class="corretor-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-3">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div
+              class="cta-card"
+              style="background-image: url('/assets/img/anunciar.jpg')"
+            >
+              <div class="cta-overlay">
+                <h3 class="text-white mb-3">Seu imóvel</h3>
+                <a href="#" class="btn btn-light"
+                  >Anunciar <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div
+              class="cta-card"
+              style="background-image: url('/assets/img/equipe.jpg')"
+            >
+              <div class="cta-overlay">
+                <h3 class="text-white mb-3">Equipe</h3>
+                <a href="#" class="btn btn-light"
+                  >Anunciar <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer text-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              src="/assets/img/logo-supremo-branco.png"
+              alt="Supremo"
+              height="40"
+              class="mb-3"
+              onerror="this.style.display='none'"
+            />
+            <div class="social-icons mb-3">
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a href="#" class="text-white"><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-white mb-3">Imóveis</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Apartamento</a></li>
+              <li><a href="#">Casa</a></li>
+              <li><a href="#">Terreno</a></li>
+              <li><a href="#">Anuncie seu Imóvel</a></li>
+              <li><a href="#">Encontre seu Imóvel</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-white mb-3">Para Investidores</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Especial na Praia Brava</a></li>
+              <li><a href="#">Lançamentos em Itajaí</a></li>
+              <li><a href="#">Apartamentos em Itajaí</a></li>
+              <li><a href="#">Imóveis na Barra do Camboriú</a></li>
+              <li><a href="#">Imóveis na Praia Brava</a></li>
+              <li><a href="#">Apartamentos na Praia Brava</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h6 class="text-white mb-3">Supremo</h6>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Sobre a Imobiliária</a></li>
+              <li><a href="#">Nossa Promessa e Valores</a></li>
+              <li>
+                <a href="#"
+                  >Av. Marginal Leste, 950 - Sala 01 - Praia Brava, Itajaí -
+                  SC</a
+                >
+              </li>
+              <li><a href="#">CRECI 98765-J</a></li>
+              <li><a href="#">CNPJ: 12.345.678/0001-90</a></li>
+            </ul>
+            <div class="mt-3">
+              <i class="bi bi-telephone"></i> (47) 98765-4321
+            </div>
+          </div>
+        </div>
+        <hr class="my-4 bg-secondary" />
+        <div class="text-center">
+          <p class="mb-0">
+            &copy; 2025 Supremo Imóveis. Todos os direitos reservados.
+            Desenvolvido com Bootstrap 5
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
