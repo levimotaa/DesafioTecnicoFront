@@ -174,7 +174,7 @@ body {
   position: relative;
   min-height: 100vh;
   height: 800px;
-  background: url("assets/img/imgPrincipal.jpg") center/cover no-repeat;
+  background: url("./assets/img/imgPrincipal.jpg") center/cover no-repeat;
   background-attachment: fixed;
   display: flex;
   align-items: center;
